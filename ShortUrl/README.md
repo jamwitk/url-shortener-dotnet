@@ -13,7 +13,7 @@ A simple URL shortener application built with ASP.NET Core, Entity Framework Cor
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/yourusername/shorturl.git
+    git clone https://github.com/jamwitk/url-shortener-dotnet.git
     cd shorturl
     ```
 
@@ -29,7 +29,7 @@ A simple URL shortener application built with ASP.NET Core, Entity Framework Cor
 
     ```
     "ConnectionStrings": {
-        "DefaultConnection": "Host=localhost;Database=shorturl;Username=yourusername;Password=yourpassword"
+        "UrlShortenerContext": "Host=localhost;Database=shorturl;Username=yourusername;Password=yourpassword"
     }
     ```
 
