@@ -1,0 +1,40 @@
+@page
+@model ShortUrl.Pages.IndexModel
+@{
+    ViewData["Title"] = "URL Shortener";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>URL Shortener</h1>
+    <form method="post" class="url-form">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label for="originalUrl">Enter URL:</label>
+            <input type="url" id="originalUrl" name="OriginalUrl" placeholder="https://example.com" required>
+        </div>
+        <button type="submit" class="submit-btn">Shorten URL</button>
+    </form>
+
+    <div class="result">
+        <!-- This section will display the shortened URL -->
+        @if (!string.IsNullOrEmpty(Model.ShortenedUrl))
+        {
+            <p>Shortened URL: <a href="@Model.ShortenedUrl" target="_blank">@Model.ShortenedUrl</a></p>
+        }
+    </div>
+</div>
+
+
+</body>
+</html>
